@@ -134,7 +134,7 @@ export default function HomePage() {
         className="relative z-10 px-6 py-6 flex justify-between items-center max-w-7xl mx-auto"
       >
         <motion.div className="flex items-center" whileHover={{ scale: 1.05 }}>
-          <img src="orus.svg" alt="Logo" className="h-3.5"></img>
+          <img src="orus.svg" alt="Logo" className="h-4" />
         </motion.div>
 
         <div className="flex gap-6 items-center">
@@ -365,13 +365,10 @@ export default function HomePage() {
       <footer className="relative z-10 px-6 py-12 border-t border-slate-800/50 mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <Shield className="w-6 h-6 text-purple-400" />
-              <span className="text-lg font-semibold">ORUS</span>
-            </div>
+            <img src="orus.svg" alt="Logo" className="h-4" />
 
             <div className="text-slate-400 text-center">
-              © 2024 ORUS. Open source for everyone. Built with 💜 for
+              © 2025 ORUS. Open source for everyone. Built with 💜 for
               developers.
             </div>
 
