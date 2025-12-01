@@ -88,7 +88,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-white">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-purple-950 to-slate-950 text-white">
       {/* Animated background */}
       <div className="fixed inset-0 opacity-20">
         <div
@@ -133,8 +133,8 @@ export default function HomePage() {
         animate={{ y: 0 }}
         className="relative z-10 px-6 py-6 flex justify-between items-center max-w-7xl mx-auto"
       >
-        <motion.div className="flex items-center" whileHover={{ scale: 1.05 }}>
-          <img src="orus.svg" alt="Logo" className="h-4" />
+        <motion.div className="flex items-center">
+          <img src="orus2.svg" alt="Logo" className="h-4" />
         </motion.div>
 
         <div className="flex gap-6 items-center">
@@ -156,7 +156,6 @@ export default function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 hover:bg-purple-600 rounded-lg font-semibold transition-colors text-sm"
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <MessageSquare className="w-4 h-4" />
@@ -184,7 +183,7 @@ export default function HomePage() {
             variants={itemVariants}
             className="text-5xl lg:text-7xl font-bold mb-6"
           >
-            <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
               Hello, World!
             </span>
           </motion.h1>
@@ -213,12 +212,13 @@ export default function HomePage() {
               href="https://github.com/orus-dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 rounded-lg font-semibold text-lg transition-all shadow-lg shadow-purple-500/50"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 rounded-lg font-semibold text-lg shadow-lg shadow-purple-500/50"
               whileHover={{
-                scale: 1.05,
+                scale: 1.01,
                 boxShadow: "0 20px 50px rgba(168, 85, 247, 0.4)",
               }}
               whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <Github className="w-5 h-5" />
               View Our Projects
@@ -229,8 +229,7 @@ export default function HomePage() {
               href="https://discord.gg/HFRsNxfCqT"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-purple-500 hover:bg-purple-500/10 rounded-lg font-semibold text-lg transition-all"
-              whileHover={{ scale: 1.05 }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-purple-500 hover:bg-purple-500/15 rounded-lg font-semibold text-lg transition-all"
               whileTap={{ scale: 0.95 }}
             >
               <MessageSquare className="w-5 h-5" />
@@ -256,7 +255,7 @@ export default function HomePage() {
               whileHover={{ y: -8 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
+              <div className="absolute inset-0 bg-linear-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
               <div className="relative bg-slate-900/50 backdrop-blur border border-slate-700 hover:border-purple-500/50 rounded-2xl p-8 transition-all h-full">
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-purple-500/10 rounded-xl mb-6">
                   <feature.icon className="w-7 h-7 text-purple-400" />
@@ -284,13 +283,13 @@ export default function HomePage() {
         variants={containerVariants}
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-            Empowering Startups
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-linear-to-r from-white to-purple-200 bg-clip-text text-transparent">
+            An Organization Built to Launch Startups
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            ORUS is an organization dedicated to supporting startups with
-            cutting-edge tools, security expertise, and a collaborative
-            community
+            ORUS is an organization focused on building and structuring multiple
+            startups under one ecosystem, from cybersecurity to developer tools,
+            with a strong foundation in engineering and innovation.
           </p>
         </motion.div>
 
@@ -319,9 +318,9 @@ export default function HomePage() {
       >
         <motion.div
           variants={itemVariants}
-          className="relative overflow-hidden bg-gradient-to-r from-purple-500/10 to-blue-500/10 backdrop-blur border border-purple-500/20 rounded-3xl p-12 text-center"
+          className="relative overflow-hidden bg-linear-to-r from-purple-500/10 to-blue-500/10 backdrop-blur border border-purple-500/20 rounded-3xl p-12 text-center"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5" />
+          <div className="absolute inset-0 bg-linear-to-r from-purple-500/5 to-blue-500/5" />
 
           <div className="relative">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
@@ -337,8 +336,7 @@ export default function HomePage() {
                 href="https://discord.gg/HFRsNxfCqT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-purple-500 hover:bg-purple-600 rounded-lg font-semibold text-lg transition-colors"
-                whileHover={{ scale: 1.05 }}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-purple-600 hover:bg-purple-500 rounded-lg font-semibold text-lg transition-colors"
                 whileTap={{ scale: 0.95 }}
               >
                 <MessageSquare className="w-5 h-5" />
@@ -350,7 +348,6 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-slate-600 hover:border-slate-400 rounded-lg font-semibold text-lg transition-colors"
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Github className="w-5 h-5" />
