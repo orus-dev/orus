@@ -48,9 +48,9 @@ export default function HomePage() {
   const values = [
     {
       icon: Rocket,
-      title: "For Startups",
+      title: "Ecosystem Growth",
       description:
-        "Empowering startups with the tools and community they need to succeed",
+        "Expanding a network of internally-built startups through innovation and collaboration",
     },
     {
       icon: Code2,
@@ -138,10 +138,10 @@ export default function HomePage() {
         </motion.div>
 
         <div className="flex gap-6 items-center">
-          {["Community", "Projects", "About"].map((item, i) => (
+          {["Blog", "Projects", "About"].map((item, i) => (
             <motion.a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`/${item.toLowerCase()}`}
               className="text-slate-300 hover:text-white transition-colors hidden md:block"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
