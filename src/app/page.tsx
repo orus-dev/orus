@@ -296,7 +296,7 @@ export default function HomePage() {
             <motion.div
               key={i}
               variants={itemVariants}
-              className="bg-slate-900/30 backdrop-blur border border-slate-800 hover:border-purple-500/30 rounded-xl p-6 transition-all"
+              className="bg-slate-900/30 backdrop-blur border border-slate-800 hover:border-purple-500/30 rounded-xl p-6 transition-colors"
             >
               <value.icon className="w-10 h-10 text-purple-400 mb-4" />
               <h4 className="text-xl font-semibold mb-2">{value.title}</h4>
