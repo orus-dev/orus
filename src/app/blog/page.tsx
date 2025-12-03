@@ -2,39 +2,27 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  Github,
-  MessageSquare,
-  Sparkles,
-  ExternalLink,
-  Star,
-  GitFork,
-} from "lucide-react";
+import { Sparkles } from "lucide-react";
 import WebStuff from "@/components/Web";
-import projects from "@/lib/posts";
-import formatNumber from "@/lib/formatNumber";
+import { PostPreview } from "@/lib/posts";
 
 export default function Blog() {
   const [mounted, setMounted] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
-  const [orgStats, setOrgStats] = useState({
-    contributors: 0,
-    stars: 0,
-    forks: 0,
-  });
+  const [projects, setProjects] = useState<PostPreview[]>([]);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   useEffect(() => {
-    async function fetchStats() {
-      const res = await fetch(`/api/stats`);
+    async function fetchPosts() {
+      const res = await fetch(`/api/blog`);
 
-      setOrgStats(await res.json());
+      setProjects(await res.json());
     }
 
-    fetchStats();
+    fetchPosts();
   }, []);
 
   const filters = [

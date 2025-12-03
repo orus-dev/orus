@@ -1,0 +1,10 @@
+{
+  "title": "My Post",
+  "description": "This is a short description",
+  "author": "John Doe",
+  "date": "2025-12-03",
+  "readingTime": 1,
+  "tags": ["typescript", "nextjs"],
+  "image": "/images/my-post.jpg",
+  "category": "guides"
+}
