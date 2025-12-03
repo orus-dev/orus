@@ -133,8 +133,7 @@ export default function HomePage() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <motion.a
-              href="https://github.com/orus-dev"
-              target="_blank"
+              href="/projects"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 rounded-lg font-semibold text-lg shadow-lg shadow-purple-500/50"
               whileHover={{
@@ -144,19 +143,18 @@ export default function HomePage() {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <Github className="w-5 h-5" />
               View Our Projects
               <ArrowRight className="w-5 h-5" />
             </motion.a>
 
             <motion.a
-              href="/projects"
+              href="https://github.com/orus-dev"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-purple-500 hover:bg-purple-500/15 rounded-lg font-semibold text-lg transition-all"
               whileTap={{ scale: 0.95 }}
             >
-              View Our Projects
+              Follow us on
               <Github className="w-5 h-5" />
             </motion.a>
           </motion.div>
