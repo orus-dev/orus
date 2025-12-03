@@ -1,0 +1,11 @@
+
+{
+  "title": "A critical vulnerability with Next.js 16: Code execution",
+  "description": "A critical vulnerability has been identified in the React Server Components (RSC) protocol",
+  "author": "Klesti Selimaj",
+  "date": "2025-12-03",
+  "readingTime": 1,
+  "tags": ["next.js", "vulnerability", "critical", "0day", "ssr"],
+  "image": "/blog-img/nextjs-critical.png",
+  "category": "news"
+}
