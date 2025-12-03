@@ -117,7 +117,7 @@ export default function Blog() {
           {filteredPosts.map((post, i) => (
             <motion.div
               key={i}
-              className="relative group bg-slate-900/80 backdrop-blur border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition-colors"
+              className="relative group bg-slate-900/40 backdrop-blur border border-slate-700/50 rounded-2xl p-6 hover:border-purple-500/50 transition-colors"
               whileHover={{ y: -3, transition: { duration: 0.5 } }}
               variants={itemVariants}
               initial="hidden"
@@ -136,8 +136,8 @@ export default function Blog() {
 
                 <div className="flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">
-                      {post.title}
+                    <h3 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors cursor-pointer">
+                      <a href={post.url}>{post.title}</a>
                     </h3>
                     <p className="text-slate-300 mb-4 line-clamp-3">
                       {post.description}
