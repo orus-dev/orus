@@ -39,9 +39,8 @@ export default function Blog() {
       : projects.filter((p) => p.category === activeFilter);
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {},
     visible: {
-      opacity: 1,
       transition: {
         staggerChildren: 0.1,
       },
@@ -49,13 +48,11 @@ export default function Blog() {
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
-      y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
+      y: 0,
+      transition: { duration: 0.9 },
     },
   };
 
@@ -115,22 +112,18 @@ export default function Blog() {
       </motion.section>
 
       {/* Blog Posts List */}
-      <motion.section
-        className="relative z-10 px-6 py-12 max-w-5xl mx-auto"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
+      <section className="relative z-10 px-6 py-12 max-w-5xl mx-auto">
         <div className="flex flex-col gap-8">
           {filteredPosts.map((post, i) => (
-            <motion.article
+            <motion.div
               key={i}
-              layout
-              className="relative group bg-slate-900/80 backdrop-blur border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition-all"
-              whileHover={{ y: -3 }}
+              className="relative group bg-slate-900/80 backdrop-blur border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition-colors"
+              whileHover={{ y: -3, transition: { duration: 0.5 } }}
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
             >
               <div className="flex flex-col md:flex-row gap-4">
-                {/* Optional Thumbnail */}
                 {post.image && (
                   <div className="shrink-0 w-full md:w-40 h-32 md:h-28 overflow-hidden rounded-xl">
                     <img
@@ -141,7 +134,6 @@ export default function Blog() {
                   </div>
                 )}
 
-                {/* Content */}
                 <div className="flex-1 flex flex-col justify-between">
                   <div>
                     <h3 className="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">
@@ -151,7 +143,6 @@ export default function Blog() {
                       {post.description}
                     </p>
 
-                    {/* Metadata */}
                     <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400 mb-4">
                       <span>{post.author}</span>
                       <span>•</span>
@@ -173,7 +164,6 @@ export default function Blog() {
                     </div>
                   </div>
 
-                  {/* Read More */}
                   <a
                     href={post.url}
                     className="self-start mt-auto inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/20 rounded-lg text-sm font-medium text-purple-400 transition-colors"
@@ -182,10 +172,10 @@ export default function Blog() {
                   </a>
                 </div>
               </div>
-            </motion.article>
+            </motion.div>
           ))}
         </div>
-      </motion.section>
+      </section>
     </WebStuff>
   );
 }

@@ -140,8 +140,11 @@ export default function Projects() {
               key={i}
               layout
               className="relative group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
               whileHover={{ y: -8 }}
-              viewport={{ once: false }}
             >
               <div className="absolute inset-0 bg-linear-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
               <div className="relative bg-slate-900/80 backdrop-blur border border-slate-700 hover:border-purple-500/50 rounded-2xl p-6 transition-all h-full flex flex-col">
