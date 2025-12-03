@@ -12,13 +12,29 @@ import {
 } from "lucide-react";
 import WebStuff from "@/components/Web";
 import projects from "@/lib/projects";
+import formatNumber from "@/lib/formatNumber";
 
 export default function ProjectsPage() {
   const [mounted, setMounted] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
+  const [orgStats, setOrgStats] = useState({
+    contributors: 0,
+    stars: 0,
+    forks: 0,
+  });
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    async function fetchStats() {
+      const res = await fetch(`/api/stats`);
+
+      setOrgStats(await res.json());
+    }
+
+    fetchStats();
   }, []);
 
   const filters = [
@@ -221,9 +237,12 @@ export default function ProjectsPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { label: "Projects", value: `${projects.length}+` },
-              { label: "Contributors", value: "180+" },
-              { label: "Stars", value: "12.5K+" },
-              { label: "Forks", value: "2.1K+" },
+              {
+                label: "Contributors",
+                value: `${formatNumber(orgStats.contributors)}+`,
+              },
+              { label: "Stars", value: `${formatNumber(orgStats.stars)}+` },
+              { label: "Forks", value: `${formatNumber(orgStats.forks)}+` },
             ].map((stat, i) => (
               <motion.div
                 key={i}
