@@ -14,6 +14,7 @@ import {
   Lock,
   Sparkles,
 } from "lucide-react";
+import WebStuff from "@/components/Web";
 
 export default function HomePage() {
   const [mounted, setMounted] = useState(false);
@@ -86,7 +87,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-950 via-purple-950 to-slate-950 text-white">
+    <WebStuff>
       {/* Animated background */}
       <div className="fixed inset-0 opacity-20">
         <div
@@ -355,41 +356,6 @@ export default function HomePage() {
           </div>
         </motion.div>
       </motion.section>
-
-      {/* Footer */}
-      <footer className="relative z-10 px-6 py-12 border-t border-slate-800/50 mt-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <img src="orus.svg" alt="Logo" className="h-4" />
-
-            <div className="text-slate-400 text-center">
-              © 2025 ORUS. Open source for everyone. Built with 💜 for
-              developers.
-            </div>
-
-            <div className="flex gap-6">
-              <motion.a
-                href="https://github.com/orus-dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-purple-400 transition-colors"
-                whileHover={{ scale: 1.2, rotate: 5 }}
-              >
-                <Github className="w-6 h-6" />
-              </motion.a>
-              <motion.a
-                href="https://discord.gg/HFRsNxfCqT"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-purple-400 transition-colors"
-                whileHover={{ scale: 1.2, rotate: -5 }}
-              >
-                <MessageSquare className="w-6 h-6" />
-              </motion.a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </WebStuff>
   );
 }
