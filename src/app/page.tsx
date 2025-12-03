@@ -14,6 +14,7 @@ import {
   Lock,
   Sparkles,
 } from "lucide-react";
+import WebStuff from "@/components/Web";
 
 export default function HomePage() {
   const [mounted, setMounted] = useState(false);
@@ -86,82 +87,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-950 via-purple-950 to-slate-950 text-white">
-      {/* Animated background */}
-      <div className="fixed inset-0 opacity-20">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, rgb(168, 85, 247) 1px, transparent 0)`,
-            backgroundSize: "50px 50px",
-          }}
-        />
-      </div>
-
-      {/* Gradient orbs */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-1/4 -left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            delay: 1,
-          }}
-        />
-      </div>
-
-      {/* Navigation */}
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className="relative z-10 px-6 py-6 flex justify-between items-center max-w-7xl mx-auto"
-      >
-        <motion.div className="flex items-center">
-          <img src="orus2.svg" alt="Logo" className="h-4" />
-        </motion.div>
-
-        <div className="flex gap-6 items-center">
-          {["Blog", "Projects", "About"].map((item, i) => (
-            <motion.a
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              className="text-slate-300 hover:text-white transition-colors hidden md:block"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -2 }}
-            >
-              {item}
-            </motion.a>
-          ))}
-          <motion.a
-            href="https://discord.gg/HFRsNxfCqT"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 hover:bg-purple-600 rounded-lg font-semibold transition-colors text-sm"
-            whileTap={{ scale: 0.95 }}
-          >
-            <MessageSquare className="w-4 h-4" />
-            Join Discord
-          </motion.a>
-        </div>
-      </motion.nav>
-
+    <WebStuff>
       {/* Hero Section */}
       <motion.section
         className="relative z-10 px-6 py-20 lg:py-32 max-w-7xl mx-auto"
@@ -207,8 +133,7 @@ export default function HomePage() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <motion.a
-              href="https://github.com/orus-dev"
-              target="_blank"
+              href="/projects"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 rounded-lg font-semibold text-lg shadow-lg shadow-purple-500/50"
               whileHover={{
@@ -218,20 +143,19 @@ export default function HomePage() {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <Github className="w-5 h-5" />
               View Our Projects
               <ArrowRight className="w-5 h-5" />
             </motion.a>
 
             <motion.a
-              href="https://discord.gg/HFRsNxfCqT"
+              href="https://github.com/orus-dev"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-purple-500 hover:bg-purple-500/15 rounded-lg font-semibold text-lg transition-all"
               whileTap={{ scale: 0.95 }}
             >
-              <MessageSquare className="w-5 h-5" />
-              Join Community
+              Follow us on
+              <Github className="w-5 h-5" />
             </motion.a>
           </motion.div>
         </div>
@@ -355,41 +279,6 @@ export default function HomePage() {
           </div>
         </motion.div>
       </motion.section>
-
-      {/* Footer */}
-      <footer className="relative z-10 px-6 py-12 border-t border-slate-800/50 mt-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <img src="orus.svg" alt="Logo" className="h-4" />
-
-            <div className="text-slate-400 text-center">
-              © 2025 ORUS. Open source for everyone. Built with 💜 for
-              developers.
-            </div>
-
-            <div className="flex gap-6">
-              <motion.a
-                href="https://github.com/orus-dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-purple-400 transition-colors"
-                whileHover={{ scale: 1.2, rotate: 5 }}
-              >
-                <Github className="w-6 h-6" />
-              </motion.a>
-              <motion.a
-                href="https://discord.gg/HFRsNxfCqT"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-purple-400 transition-colors"
-                whileHover={{ scale: 1.2, rotate: -5 }}
-              >
-                <MessageSquare className="w-6 h-6" />
-              </motion.a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </WebStuff>
   );
 }
