@@ -14,7 +14,7 @@ import WebStuff from "@/components/Web";
 import projects from "@/lib/projects";
 import formatNumber from "@/lib/formatNumber";
 
-export default function ProjectsPage() {
+export default function Projects() {
   const [mounted, setMounted] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
   const [orgStats, setOrgStats] = useState({
@@ -84,7 +84,7 @@ export default function ProjectsPage() {
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm">
               <Sparkles className="w-4 h-4" />
-              Open Source Projects
+              Community Projects
             </span>
           </motion.div>
 
@@ -93,7 +93,7 @@ export default function ProjectsPage() {
             className="text-5xl lg:text-6xl font-bold mb-6"
           >
             <span className="bg-linear-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-              Building the Future
+              What We're Building
             </span>
           </motion.h1>
 
@@ -101,8 +101,8 @@ export default function ProjectsPage() {
             variants={itemVariants}
             className="text-xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto"
           >
-            Explore our collection of open-source projects designed to empower
-            developers and enhance security across the ecosystem.
+            Explore our projects designed to improve developers and enhance
+            security across the ecosystem.
           </motion.p>
 
           {/* Filter Tabs */}
