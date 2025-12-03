@@ -6,6 +6,7 @@ import { Sparkles } from "lucide-react";
 import WebStuff from "@/components/Web";
 import { useParams } from "next/navigation";
 import { PostPreview } from "@/lib/posts";
+import Markdown from "@/components/Markdown";
 
 export default function BlogPost() {
   const [post, setPost] = useState<{
@@ -112,11 +113,12 @@ export default function BlogPost() {
         )}
 
         {/* Post Content */}
-        <motion.article
+        <motion.section
           variants={itemVariants}
           className="prose prose-invert max-w-none text-slate-300"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        >
+          <Markdown content={post.content} />
+        </motion.section>
       </motion.section>
     </WebStuff>
   );
