@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Paperclip, Sparkles } from "lucide-react";
 import WebStuff from "@/components/Web";
 import { useParams } from "next/navigation";
 import { PostPreview } from "@/lib/posts";
@@ -59,10 +59,24 @@ export default function BlogPost() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={itemVariants} className="mb-4">
+        <motion.div
+          variants={itemVariants}
+          className="mb-4 w-full flex justify-between items-center"
+        >
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm">
             <Sparkles className="w-4 h-4" />
             {post.meta.category}
+          </span>
+
+          <span
+            className="px-3 py-2 bg-slate-500/10 border border-slate-500/20 rounded-full text-slate-400 transition-colors hover:bg-purple-500/10 hover:border-purple-500/20 hover:text-purple-400 text-sm"
+            onClick={() => {
+              navigator.clipboard.writeText(
+                `https://orus-dev.netlify.app${post.meta.url}`
+              );
+            }}
+          >
+            <Paperclip className="w-4 h-4" />
           </span>
         </motion.div>
 
