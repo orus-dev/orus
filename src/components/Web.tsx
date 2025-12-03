@@ -51,13 +51,11 @@ export default function WebStuff({
         initial="hidden"
         animate="visible"
         variants={{
-          hidden: { y: -40, opacity: 0 },
+          hidden: { opacity: 0 },
           visible: {
-            y: 0,
             opacity: 1,
             transition: {
-              duration: 0.6,
-              ease: [0.25, 0.1, 0.25, 1], // smooth ease
+              duration: 0.5,
             },
           },
         }}
@@ -96,8 +94,7 @@ export default function WebStuff({
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{
-                duration: 0.45,
-                ease: [0.25, 0.1, 0.25, 1],
+                duration: 0.8,
               }}
               whileHover={{ y: -2 }}
             >
