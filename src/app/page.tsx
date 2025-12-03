@@ -150,14 +150,14 @@ export default function HomePage() {
             </motion.a>
 
             <motion.a
-              href="https://discord.gg/HFRsNxfCqT"
+              href="/projects"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-purple-500 hover:bg-purple-500/15 rounded-lg font-semibold text-lg transition-all"
               whileTap={{ scale: 0.95 }}
             >
-              <MessageSquare className="w-5 h-5" />
-              Join Community
+              View Our Projects
+              <Github className="w-5 h-5" />
             </motion.a>
           </motion.div>
         </div>

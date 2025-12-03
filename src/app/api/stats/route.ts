@@ -3,6 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 var lastGitRequest = new Date("2023-01-10T12:00:00Z");
 var stats = { stars: 0, forks: 0, contributors: 0 };
 
+function isIterable(obj: any): obj is Iterable<any> {
+  return obj != null && typeof obj[Symbol.iterator] === "function";
+}
+
 async function getStats() {
   let page = 0;
   let stars = 0;
@@ -15,7 +19,7 @@ async function getStats() {
     );
     const repos = await res.json();
 
-    if (repos.length === 0) break;
+    if (repos.length === 0 || !isIterable(repos)) break;
 
     for (const repo of repos) {
       stars += repo.stargazers_count;
