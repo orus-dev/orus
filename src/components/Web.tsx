@@ -68,7 +68,7 @@ export default function WebStuff({
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <img src="orus2.svg" alt="Logo" className="h-4" />
+          <img src="/orus2.svg" alt="Logo" className="h-4" />
         </motion.a>
 
         {/* Menu */}
@@ -128,7 +128,7 @@ export default function WebStuff({
       <footer className="relative z-10 px-6 py-12 border-t border-slate-800/50 mt-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <img src="orus.svg" alt="Logo" className="h-4" />
+            <img src="/orus.svg" alt="Logo" className="h-4" />
 
             <div className="text-slate-400 text-center">
               © 2025 ORUS. Open source for everyone. Built with 💜 for
