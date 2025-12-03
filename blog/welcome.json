@@ -1,0 +1,10 @@
+{
+  "title": "Welcome to ORUS!",
+  "description": "ORUS is a organization for people just like you",
+  "author": "Klesti Selimaj",
+  "date": "2025-12-03",
+  "readingTime": 1,
+  "tags": ["welcome", "first", "ORUS"],
+  "image": "/orus-logo.svg",
+  "category": "news"
+}
