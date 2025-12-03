@@ -5,20 +5,13 @@ import { motion } from "framer-motion";
 import {
   Github,
   MessageSquare,
-  Shield,
-  Code2,
-  Rocket,
-  Lock,
   Sparkles,
   ExternalLink,
   Star,
   GitFork,
-  Terminal,
-  Globe,
-  Zap,
-  Package,
 } from "lucide-react";
 import WebStuff from "@/components/Web";
+import projects from "@/lib/projects";
 
 export default function ProjectsPage() {
   const [mounted, setMounted] = useState(false);
@@ -28,89 +21,12 @@ export default function ProjectsPage() {
     setMounted(true);
   }, []);
 
-  const projects = [
-    {
-      title: "SecureAuth Pro",
-      description:
-        "Enterprise-grade authentication system with zero-trust architecture and advanced threat detection.",
-      category: "security",
-      icon: Shield,
-      stars: 2450,
-      forks: 340,
-      tech: ["TypeScript", "Node.js", "PostgreSQL"],
-      status: "Active",
-      github: "https://github.com/orus-dev",
-      demo: "#",
-    },
-    {
-      title: "DevOps Toolkit",
-      description:
-        "Complete CI/CD automation suite with container orchestration and infrastructure as code.",
-      category: "devtools",
-      icon: Terminal,
-      stars: 1820,
-      forks: 290,
-      tech: ["Go", "Docker", "Kubernetes"],
-      status: "Active",
-      github: "https://github.com/orus-dev",
-    },
-    {
-      title: "CloudSync API",
-      description:
-        "Real-time data synchronization service with end-to-end encryption and multi-region support.",
-      category: "infrastructure",
-      icon: Globe,
-      stars: 980,
-      forks: 145,
-      tech: ["Rust", "Redis", "GraphQL"],
-      status: "Beta",
-      github: "https://github.com/orus-dev",
-      demo: "#",
-    },
-    {
-      title: "CodeGuard Scanner",
-      description:
-        "Automated code security scanner with AI-powered vulnerability detection and remediation suggestions.",
-      category: "security",
-      icon: Lock,
-      stars: 3200,
-      forks: 480,
-      tech: ["Python", "TensorFlow", "FastAPI"],
-      status: "Active",
-      github: "https://github.com/orus-dev",
-    },
-    {
-      title: "MicroFramework",
-      description:
-        "Lightweight, blazing-fast microservices framework with built-in service mesh and observability.",
-      category: "devtools",
-      icon: Zap,
-      stars: 1560,
-      forks: 210,
-      tech: ["TypeScript", "gRPC", "Prometheus"],
-      status: "Active",
-      github: "https://github.com/orus-dev",
-      demo: "#",
-    },
-    {
-      title: "PackageHub",
-      description:
-        "Private package registry with caching, versioning, and dependency analysis for modern development.",
-      category: "infrastructure",
-      icon: Package,
-      stars: 720,
-      forks: 95,
-      tech: ["Node.js", "MongoDB", "S3"],
-      status: "Beta",
-      github: "https://github.com/orus-dev",
-    },
-  ];
-
   const filters = [
     { id: "all", label: "All Projects" },
     { id: "security", label: "Security" },
     { id: "devtools", label: "Dev Tools" },
     { id: "infrastructure", label: "Infrastructure" },
+    { id: "communication", label: "Communication" },
   ];
 
   const filteredProjects =
@@ -304,7 +220,7 @@ export default function ProjectsPage() {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { label: "Projects", value: "24+" },
+              { label: "Projects", value: `${projects.length}+` },
               { label: "Contributors", value: "180+" },
               { label: "Stars", value: "12.5K+" },
               { label: "Forks", value: "2.1K+" },
